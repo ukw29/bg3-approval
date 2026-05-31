@@ -1,0 +1,26 @@
+{
+  "id": "bg3-approval",
+  "title": "BG3 Style Approval",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "linyuanfang & Gemini",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "description": "BG3 style approval HUD.",
+  "esmodules": [
+    "scripts.js"
+  ],
+  "styles": [
+    "styles.css"
+  ],
+  "socket": true,
+  "url": "",
+  "manifest": ""
+}

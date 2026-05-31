@@ -1,0 +1,78 @@
+/* --- HUD 按钮 --- */
+.bg3-approval-hud-btn {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer;
+    z-index: 10000;
+    pointer-events: auto;
+    box-shadow: 0 0 10px #FFD700;
+    transition: all 0.2s;
+}
+
+.bg3-approval-hud-btn:hover {
+    transform: translateX(-50%) scale(1.1);
+    background: rgba(50, 50, 50, 0.9);
+}
+
+.bg3-approval-hud-btn i {
+    font-size: 22px;
+    color: #FFD700;
+}
+
+/* --- 菜单 --- */
+.bg3-approval-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 35px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #7a7971;
+    border-radius: 5px;
+    padding: 5px;
+    width: 110px;
+    z-index: 10001;
+    box-shadow: 0 0 10px #000;
+}
+
+.bg3-approval-menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background: transparent;
+}
+
+.bg3-approval-hud-btn:hover .bg3-approval-menu,
+.bg3-approval-menu:hover {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bg3-approval-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    color: #e0e0e0;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: background 0.2s;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.bg3-approval-option:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
