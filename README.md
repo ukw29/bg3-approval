@@ -1,8 +1,8 @@
 声明：本mod大部分代码由AI生成！
 
 仿博德之门3风格的表态mod，目前适配v13版本，在DND以及PF2系统上经过测试可以运行，其他系统未测试，不推荐使用。
-<img width="545" height="521" alt="image" src="https://github.com/user-attachments/assets/a157e95a-bfbd-4b62-91af-4cd1a47b68aa" />
 
+<img width="545" height="521" alt="image" src="https://github.com/user-attachments/assets/a157e95a-bfbd-4b62-91af-4cd1a47b68aa" />
 
 #1 多种按钮显示方式：Token HUD 与 悬浮球（通过设置修改）
 <img width="1299" height="428" alt="image" src="https://github.com/user-attachments/assets/925799f5-8970-4c38-ac1f-ffa6ca725832" />
