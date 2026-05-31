@@ -1,4 +1,4 @@
-![Downloads](https://img.shields.io/github/downloads/你的用户名/你的仓库名/total)
+![Downloads](https://img.shields.io/github/downloads/ukw29/bg3-approval/total)
 
 声明：本mod大部分代码由AI生成！
 
