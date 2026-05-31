@@ -1,3 +1,5 @@
+![Downloads](https://img.shields.io/github/downloads/你的用户名/你的仓库名/total)
+
 声明：本mod大部分代码由AI生成！
 
 仿博德之门3风格的表态mod，目前适配v13版本，在DND以及PF2系统上经过测试可以运行，其他系统未测试，不推荐使用。
