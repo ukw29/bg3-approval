@@ -8,7 +8,7 @@
   },
   "authors": [
     {
-      "name": "linyuanfang & Gemini",
+      "name": "ukw29",
       "email": "",
       "url": ""
     }
@@ -21,6 +21,6 @@
     "styles.css"
   ],
   "socket": true,
-  "url": "",
-  "manifest": ""
+  "url": "https://github.com/ukw29/bg3-approval",
+  "download": "https://github.com/ukw29/bg3-approval/releases/download/1.0.0/bg3-approval.zip"
 }
