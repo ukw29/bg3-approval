@@ -1,6 +1,6 @@
 声明：本mod大部分代码由AI生成！
 
-仿博德之门3风格的表态mod，目前适配v13版本，在DND以及PF2系统上经过测试可以运行，其他系统未测试，不推荐使用。
+仿博德之门3风格的表态mod，目前适配v13和v14版本，在DND以及PF2系统上经过测试可以运行，其他系统未测试，不推荐使用。
 
 <img width="545" height="521" alt="image" src="https://github.com/user-attachments/assets/a157e95a-bfbd-4b62-91af-4cd1a47b68aa" />
 
