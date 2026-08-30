@@ -37,6 +37,6 @@ Menu labels, notification text, duration, position, and button visibility can be
 
 To add more reactions, replace icons, or change colors, users with basic JavaScript knowledge may edit `scripts.js` after making a backup.
 
-## Project
+## Sample
 
-[ukw29/bg3-approval](https://github.com/ukw29/bg3-approval)
+TO [简体中文](./README.md) 
