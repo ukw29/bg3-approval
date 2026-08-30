@@ -1,0 +1,36 @@
+{
+  "id": "bg3-approval",
+  "title": "BG3 Style Approval",
+  "version": "1.1.3",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "ukw29"
+    }
+  ],
+  "description": "BG3 style approval HUD.",
+  "esmodules": [
+    "scripts.js"
+  ],
+  "styles": [
+    "styles.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "cn",
+      "name": "简体中文",
+      "path": "lang/cn.json"
+    }
+  ],
+  "socket": true,
+  "url": "https://github.com/ukw29/bg3-approval",
+  "download": "https://github.com/ukw29/bg3-approval/releases/download/2.0.0/bg3-approval.zip"
+}
