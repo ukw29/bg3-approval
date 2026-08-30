@@ -1,5 +1,7 @@
 # BG3 Style Approval
 
+[简体中文](./README.md) | [English](./README_EN.md)
+
 > **AI 需知**
 >
 > 本项目在 AI 辅助下完成了部分代码与文档整理；所有发布内容均由维护者逐项检查、修订并验收。AI 提供效率，最终判断与责任始终属于人。
