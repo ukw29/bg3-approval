@@ -1,0 +1,283 @@
+:root {
+    --bg3-layer-max: 2147483647;
+}
+
+#bg3-widget-root,
+#bg3-notification-container {
+    inset: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+/* Popover places these elements in the browser top layer. z-index is the v13 fallback. */
+#bg3-widget-root {
+    position: fixed;
+    z-index: calc(var(--bg3-layer-max) - 1);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    height: max-content;
+    pointer-events: auto;
+    will-change: top, left;
+}
+
+.bg3-widget-main,
+.bg3-widget-action,
+.bg3-approval-option {
+    appearance: none;
+    font-family: inherit;
+}
+
+.bg3-widget-main {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    background: rgb(0 0 0 / 85%);
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    color: #eee;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    cursor: grab;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    opacity: 0.4;
+    transition: opacity 0.3s ease, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+}
+
+#bg3-widget-root.is-active .bg3-widget-main {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+#bg3-widget-root.is-open .bg3-widget-main {
+    border-color: #ff9800;
+}
+
+.bg3-widget-main:active {
+    cursor: grabbing;
+}
+
+.bg3-widget-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8) translateY(10px);
+    transform-origin: bottom center;
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#bg3-widget-root.is-open .bg3-widget-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+}
+
+.bg3-widget-action {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    color: var(--bg3-action-color);
+    background: rgb(30 30 30 / 95%);
+    border: 1px solid var(--bg3-action-color);
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 50%);
+    transition: transform 0.05s, background 0.1s;
+}
+
+.bg3-widget-action:hover {
+    background: #444;
+    transform: scale(1.15);
+}
+
+.bg3-widget-action:active {
+    transform: scale(0.9);
+}
+
+#bg3-notification-container {
+    position: fixed;
+    z-index: var(--bg3-layer-max);
+    display: block;
+    max-width: calc(100vw - 32px);
+    pointer-events: none;
+}
+
+#bg3-notification-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: visible;
+}
+
+.bg3-approval-toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    max-width: min(520px, calc(100vw - 32px));
+    padding: 6px 10px;
+    color: #eee;
+    background: linear-gradient(90deg, rgb(16 16 16 / 98%), rgb(30 30 30 / 95%));
+    border: 1px solid #5c5c5c;
+    border-left: 6px solid var(--bg3-action-color);
+    border-radius: 3px;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 90%);
+    pointer-events: none;
+    visibility: visible;
+}
+
+.bg3-toast-portrait {
+    display: block;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border: 1px solid #9a9a91;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.bg3-toast-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bg3-toast-name {
+    overflow: hidden;
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Player statements omit the generic User avatar and emphasize the player ID. */
+.bg3-approval-toast.is-player .bg3-toast-name {
+    display: -webkit-box;
+    max-width: min(420px, calc(100vw - 64px));
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.bg3-toast-message {
+    overflow-wrap: anywhere;
+    color: var(--bg3-action-color);
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    text-shadow: 0 0 2px rgb(0 0 0 / 50%);
+}
+
+/* Token HUD button: works with the v13 jQuery hook and the v14 HTMLElement hook. */
+.bg3-approval-hud-btn {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    z-index: 10000;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    color: #ffd700;
+    background: rgb(0 0 0 / 85%);
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ffd700;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.bg3-approval-hud-btn:hover {
+    transform: translateX(-50%) scale(1.1);
+    background: rgb(50 50 50 / 90%);
+}
+
+.bg3-approval-hud-btn > i {
+    color: #ffd700;
+    font-size: 22px;
+}
+
+.bg3-approval-menu {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    z-index: 10001;
+    display: none;
+    width: max-content;
+    min-width: 110px;
+    padding: 5px;
+    background: rgb(0 0 0 / 95%);
+    border: 1px solid #7a7971;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000;
+}
+
+.bg3-approval-menu::before {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    content: "";
+}
+
+.bg3-approval-hud-btn:hover .bg3-approval-menu,
+.bg3-approval-menu:hover {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bg3-approval-option {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    color: #e0e0e0;
+    background: transparent;
+    border: 0;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+}
+
+.bg3-approval-option i {
+    color: var(--bg3-action-color);
+}
+
+.bg3-approval-option:hover {
+    color: #fff;
+    background: rgb(255 255 255 / 30%);
+}
