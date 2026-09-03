@@ -1,0 +1,70 @@
+<section class="bg3-custom-actions">
+    <p class="bg3-custom-actions-hint">{{localize "bg3-approval.settings.customActions.windowHint"}}</p>
+
+    <div class="bg3-custom-actions-list">
+        {{#if hasActions}}
+            {{#each actions}}
+                <article class="bg3-custom-action" data-action-id="{{id}}">
+                    <div class="bg3-custom-action-summary">
+                        <span class="bg3-custom-action-preview" style="--bg3-custom-color: {{color}}" aria-hidden="true">
+                            <i class="{{icon}}"></i>
+                        </span>
+                        <span class="bg3-custom-action-name" title="{{label}}">{{label}}</span>
+                        <div class="bg3-custom-action-controls">
+                            <button type="button" data-action="moveUp" data-id="{{id}}" title="{{localize 'bg3-approval.settings.customActions.moveUp'}}" aria-label="{{localize 'bg3-approval.settings.customActions.moveUp'}}" {{#unless canMoveUp}}disabled{{/unless}}>
+                                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" data-action="moveDown" data-id="{{id}}" title="{{localize 'bg3-approval.settings.customActions.moveDown'}}" aria-label="{{localize 'bg3-approval.settings.customActions.moveDown'}}" {{#unless canMoveDown}}disabled{{/unless}}>
+                                <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" data-action="edit" data-id="{{id}}" title="{{localize 'bg3-approval.settings.customActions.edit'}}" aria-label="{{localize 'bg3-approval.settings.customActions.edit'}}">
+                                <i class="fas fa-pen" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" data-action="delete" data-id="{{id}}" title="{{localize 'bg3-approval.settings.customActions.delete'}}" aria-label="{{localize 'bg3-approval.settings.customActions.delete'}}">
+                                <i class="fas fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    {{#if editing}}
+                        <div class="bg3-custom-action-editor" data-action-id="{{id}}">
+                            <label>
+                                <span>{{localize "bg3-approval.settings.customActions.label"}}</span>
+                                <input type="text" data-field="label" value="{{label}}" maxlength="100" required>
+                            </label>
+                            <label>
+                                <span>{{localize "bg3-approval.settings.customActions.text"}}</span>
+                                <textarea data-field="text" rows="2" maxlength="500" required>{{text}}</textarea>
+                            </label>
+                            <div class="bg3-custom-action-appearance">
+                                <label>
+                                    <span>{{localize "bg3-approval.settings.customActions.icon"}}</span>
+                                    <input type="text" data-field="icon" value="{{icon}}">
+                                </label>
+                                <label class="bg3-custom-action-color">
+                                    <span>{{localize "bg3-approval.settings.customActions.color"}}</span>
+                                    <input type="color" data-field="color" value="{{color}}">
+                                </label>
+                            </div>
+                        </div>
+                    {{/if}}
+                </article>
+            {{/each}}
+        {{else}}
+            <p class="bg3-custom-actions-empty">{{localize "bg3-approval.settings.customActions.empty"}}</p>
+        {{/if}}
+    </div>
+
+    <footer class="bg3-custom-actions-footer">
+        <button type="button" data-action="add">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+            {{localize "bg3-approval.settings.customActions.add"}}
+        </button>
+        <span class="bg3-custom-actions-footer-spacer"></span>
+        <button type="button" data-action="cancel">{{localize "bg3-approval.settings.customActions.cancel"}}</button>
+        <button type="submit">
+            <i class="fas fa-save" aria-hidden="true"></i>
+            {{localize "bg3-approval.settings.customActions.save"}}
+        </button>
+    </footer>
+</section>
